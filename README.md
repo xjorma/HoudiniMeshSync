@@ -4,6 +4,7 @@
 Sync mesh between Houdini and the Apple Vision Pro. Run Houdini on a Mac computer, sending the mesh through the network to your Vision Pro.
 
 ![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/RPReplay_Final1721394613.jpg)
+https://www.youtube.com/watch?v=kyJoJuaRGVE
 
 ### HDA Setup
 
