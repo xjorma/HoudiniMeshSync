@@ -18,7 +18,8 @@ https://www.youtube.com/watch?v=kyJoJuaRGVE
 
 ### TODO (Might take time since I don't own a Vision Pro yet)
 
-- Optimize file transfer (At least better share the vertex, or compress using Draco).
+- <s>Optimize file transfer (At least better share the vertex). </s> **(Done)**
+- Use 16bits indices in less than 2<sup>16</sup> vertices.
 - Use hand gestures to rotate and zoom.
 - Have nice round buttons instead of text (Better for eye tracking).
 - Support for optional vertex color (Cd).
