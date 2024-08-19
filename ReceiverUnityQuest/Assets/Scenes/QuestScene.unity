@@ -622,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812162935}
   m_Layer: 0
-  m_Name: Base
+  m_Name: MeshSyncBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 1273478778}
   - component: {fileID: 1273478777}
   - component: {fileID: 1273478782}
-  - component: {fileID: 1273478781}
+  - component: {fileID: 1273478783}
   m_Layer: 0
   m_Name: NdiReceiver
   m_TagString: Untagged
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a09ab5fc64402d49b12d170a7577986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ndiName: DESKTOP-R0OU6I4 (NVIDIA GeForce RTX 4060 Ti 2)
+  _ndiName: 
   _targetTexture: {fileID: 8400000, guid: 8ceb7b99211c99849bc70dbfae5fc4ff, type: 2}
   _targetRenderer: {fileID: 0}
   _targetMaterialProperty: 
@@ -1168,23 +1168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 812162935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1273478781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273478776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8869299876bc1d54a884fca6439f032f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  width: 1.7777778
-  height: 1
-  depth: 0.1
-  HorizontalSubdivision: 100
-  VerticalSubdivision: 1
 --- !u!114 &1273478782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,9 +1182,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 1.7777778
   height: 1
-  depth: 0.1
-  HorizontalSubdivision: 100
+  depth: 0.25
+  HorizontalSubdivision: 20
   VerticalSubdivision: 1
+--- !u!114 &1273478783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273478776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6678630e090bfc94f90c119d3f267e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceName: ScreenCast
 --- !u!1 &1348825447
 GameObject:
   m_ObjectHideFlags: 0
