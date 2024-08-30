@@ -11,9 +11,16 @@ https://www.youtube.com/watch?v=kyJoJuaRGVE
 
 ## Looking Glass Factory
 
+![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/lookingglassthumb.jpg)
+https://youtu.be/kyJoJuaRGVE
+
 Compile and run `ReceiverUnityLookingGlass` and you are ready to share with Houdini or Blender
 
 ## Meta Quest
+
+![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/metathumb.jpg)
+https://youtube.com/shorts/3UlCPRU08R4
+
 
 Compile and run `ReceiverUnityMetaQuest` (Works on PC and also on standalone).  
 If you are using it on standalone, don't forget to set your Quest's IP address in Houdini or Blender.
