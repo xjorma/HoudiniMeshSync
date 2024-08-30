@@ -1,12 +1,27 @@
 # HoudiniMeshSync
 
+**Disclaimer**: This was developed as a proof of concept, but if people find it useful, I might spend time to develop it further into a more polished product.
+
 ## Apple Vision Pro
-Sync mesh between Houdini and the Apple Vision Pro. Run Houdini on a Mac computer, sending the mesh through the network to your Vision Pro.
+
+Sync mesh between Houdini and the Apple Vision Pro. Run Houdini or blender on a Mac computer, sending the mesh through the network to your Vision Pro.
 
 ![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/RPReplay_Final1721394613.jpg)
 https://www.youtube.com/watch?v=kyJoJuaRGVE
 
-### HDA Setup
+## Looking Glass Factory
+
+Compile and run ReceiverUnityLookinGlass and you are ready to share with Houdini or Blender
+
+## Meta Quest
+
+Compile and run `ReceiverUnityMetaQuest` (Works on PC and also on standalone).  
+If you are using it on standalone, don't forget to set your Quest's IP address in Houdini or Blender.
+
+For screen casting, install [NDI](https://ndi.video/tools/), launch **Screen Capture** (enable the mouse cursor capture in "Capture Settings" from the tray icon), and use the **Router** to create an output called **"ScreenCast"**.
+
+
+## HDA Setup
 
 ![HdaSetup](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/hdasetting.png)
 
@@ -16,7 +31,7 @@ https://www.youtube.com/watch?v=kyJoJuaRGVE
 - **Invert Triangle**: Invert triangle orientation. Mainly used for debugging purposes.
 - **Verbose**: Logs information if the transfer is successful.
 
-### TODO (Might take time since I don't own a Vision Pro yet)
+## TODO (Might take time since I don't own a Vision Pro yet)
 
 - <s>Optimize file transfer (At least better share the vertex). </s> **(Done)**
 - Use 16bits indices in less than 2<sup>16</sup> vertices.
