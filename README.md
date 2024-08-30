@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=kyJoJuaRGVE
 
 ## Looking Glass Factory
 
-Compile and run ReceiverUnityLookinGlass and you are ready to share with Houdini or Blender
+Compile and run `ReceiverUnityLookingGlass` and you are ready to share with Houdini or Blender
 
 ## Meta Quest
 
