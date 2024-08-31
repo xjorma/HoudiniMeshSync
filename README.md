@@ -7,11 +7,13 @@
 Sync mesh between Houdini and the Apple Vision Pro. Run Houdini or blender on a Mac computer, sending the mesh through the network to your Vision Pro.
 
 ![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/RPReplay_Final1721394613.jpg)
+
 https://www.youtube.com/watch?v=kyJoJuaRGVE
 
 ## Looking Glass Factory
 
 ![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/lookingglassthumb.jpg)
+
 https://youtu.be/kyJoJuaRGVE
 
 Compile and run `ReceiverUnityLookingGlass` and you are ready to share with Houdini or Blender
@@ -19,6 +21,7 @@ Compile and run `ReceiverUnityLookingGlass` and you are ready to share with Houd
 ## Meta Quest
 
 ![Title](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/metathumb.jpg)
+
 https://youtube.com/shorts/3UlCPRU08R4
 
 
@@ -28,7 +31,7 @@ If you are using it on standalone, don't forget to set your Quest's IP address i
 For screen casting, install [NDI](https://ndi.video/tools/), launch **Screen Capture** (enable the mouse cursor capture in "Capture Settings" from the tray icon), and use the **Router** to create an output called **"ScreenCast"**.
 
 
-## HDA Setup
+## Houdini HDA Setup
 
 ![HdaSetup](https://github.com/xjorma/HoudiniMeshSync/blob/main/Images/hdasetting.png)
 
@@ -37,6 +40,12 @@ For screen casting, install [NDI](https://ndi.video/tools/), launch **Screen Cap
 - **ChunkSize**: Mesh is sliced by chunks before sending. **8192** is a good value.
 - **Invert Triangle**: Invert triangle orientation. Mainly used for debugging purposes.
 - **Verbose**: Logs information if the transfer is successful.
+
+## Blender Setup
+
+- Open the `SendMesh.py` script in the __Text Editor__.
+- If you are using another device to see the result change the **ip_adress** in the code.
+- Start the script. 
 
 ## TODO (Might take time since I don't own a Vision Pro yet)
 
