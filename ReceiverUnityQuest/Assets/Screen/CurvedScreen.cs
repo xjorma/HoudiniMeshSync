@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -11,7 +12,19 @@ public class CurvedScreen : MonoBehaviour
     [SerializeField] int HorizontalSubdivision = 100;
     [SerializeField] int VerticalSubdivision = 1;
 
-     public static Vector2 FindCircumcenter(Vector2 A, Vector2 B, Vector2 C)
+    float   leftAngle;
+    float   rightAngle;
+    Vector2 center;
+    float   radius;
+
+    public Vector3 Get3dPosition(Vector2 uv)
+    {
+        float angle = math.lerp(leftAngle, rightAngle, uv.x);
+        Vector2 pos2d = new Vector2(center.x + radius * Mathf.Cos(angle), center.y + radius * Mathf.Sin(angle));
+        return new Vector3( pos2d.x, (uv.y - 0.5f) * height, pos2d.y);
+    }
+
+    public static Vector2 FindCircumcenter(Vector2 A, Vector2 B, Vector2 C)
     {
         // Calculate the midpoints of AB and BC
         Vector2 midAB = (A + B) / 2f;
@@ -60,14 +73,6 @@ public class CurvedScreen : MonoBehaviour
 
     Mesh GenerateCurvedScreenMesh()
     {
-        // compute the center of the screen
-        Vector2 leftCorner = new Vector2(-width / 2, 0);
-        Vector2 middle = new Vector2(0, depth);
-        Vector2 rightCorner = new Vector2(width / 2, 0);
-        Vector2 center = FindCircumcenter(leftCorner, middle, rightCorner);
-        float radius = Vector2.Distance(center, leftCorner);
-        float leftAngle = Mathf.Atan2(leftCorner.y - center.y, leftCorner.x - center.x);
-        float rightAngle = Mathf.Atan2(rightCorner.y - center.y, rightCorner.x - center.x);
         // Generate the mesh
         Mesh mesh = new Mesh();
         Vector3[] positions = new Vector3[(HorizontalSubdivision + 1) * (VerticalSubdivision + 1)];
@@ -99,13 +104,7 @@ public class CurvedScreen : MonoBehaviour
                 float u = (float)x / HorizontalSubdivision;
                 float v = (float)y / VerticalSubdivision;
                 uvs[i] = new Vector2(u, v);
-                float angle = math.lerp(leftAngle, rightAngle, u);
-                Vector2 pos2d = new Vector2(center.x + radius * Mathf.Cos(angle), center.y + radius * Mathf.Sin(angle));
-                positions[i] = new Vector3(
-                    pos2d.x,
-                    (v - 0.5f) * height,
-                    pos2d.y
-                );
+                positions[i] = Get3dPosition(uvs[i]);
             }
         }
         mesh.vertices = positions;
@@ -116,6 +115,15 @@ public class CurvedScreen : MonoBehaviour
     }
     void Start()
     {
+        // compute the center of the screen
+        Vector2 leftCorner = new Vector2(-width / 2, 0);
+        Vector2 middle = new Vector2(0, depth);
+        Vector2 rightCorner = new Vector2(width / 2, 0);
+        center = FindCircumcenter(leftCorner, middle, rightCorner);
+        radius = Vector2.Distance(center, leftCorner);
+        leftAngle = Mathf.Atan2(leftCorner.y - center.y, leftCorner.x - center.x);
+        rightAngle = Mathf.Atan2(rightCorner.y - center.y, rightCorner.x - center.x);
+        // Generate the mesh
         Mesh mesh = GenerateCurvedScreenMesh();
         GetComponent<MeshFilter>().mesh = mesh;
     }
